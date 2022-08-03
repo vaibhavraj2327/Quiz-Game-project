@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div>
+        <h4>Click the Correct Answer</h4>
+        <div>
+            <p id="questiOn1"></p>
+            <button id="option0" onclick="onClicked(0)"></button><br>
+            <button id="option1" onclick="onClicked(1)"></button><br>
+            <button id="option2" onclick="onClicked(2)"></button><br>
+        </div>
+
+    </div>
+    <script>
+
+        let data = [{ question: "What is my god damn name", options: ["Vaibhav", "Nonu", "Both"], correctA: "Both" },
+        { question: "what is my mode of transport", options: ["Scooty", "Bike", "Car"], correctA: "Scooty" }]
+
+        document.getElementById('questiOn1').innerHTML = data[0].question;
+
+        for (let index = 0; index < 3; index++) {
+            document.getElementById("option" + [index]).innerHTML = data[0].options[index];
+        }
+
+
+
+        function onClicked(i) {
+            var answer = data[0].correctA
+            var input = document.getElementById("option" + i).innerHTML;
+            console.log(input, answer)
+            if (input === answer) {
+                alert(input);
+            } else {
+                alert("not working");
+            }
+            
+        }
+       
+
+    </script>
+</body>
+
+</html>
